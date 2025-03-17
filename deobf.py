@@ -7,8 +7,8 @@ def decode_recursive(data, is_reversed):
     while True:
         match = re.search(r"b'([^']+)'", data) # extracting base64 encoded string between ('')
         if not match:
-            print("No more base64 data found.")
-            print("Final data:", data)
+            #print("No more base64 data found.")
+            #print("Final data:", data)
             break
         if is_reversed == 1:
             encoded_data = match.group(1)[::-1]
