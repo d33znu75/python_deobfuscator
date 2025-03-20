@@ -44,7 +44,7 @@
             flex-direction: column;
             align-items: center;
             flex: 1;
-            margin-top: 20px; /* Adjust for header height */
+            margin-top: 20px;
         }
         .button-container {
             display: flex;
@@ -137,10 +137,13 @@
             <input type="checkbox" name="option" value="auto" onclick="toggleCheckbox(this)" checked> Auto
         </label>
         <label style="margin-left: 15px;">
-            <input type="checkbox" name="option" value="option1" onclick="toggleCheckbox(this)"> Lambda Hex
+            <input type="checkbox" name="option" value="option1" onclick="toggleCheckbox(this)"> Lambda Hex <span style="font-size: 12px; color: #b42121;">Work in Progress</span>
         </label>
         <label style="margin-left: 15px;">
             <input type="checkbox" name="option" value="option2" onclick="toggleCheckbox(this)"> Lambda Base64
+        </label>
+        <label style="margin-left: 15px;">
+            <input type="checkbox" name="option" value="option3" onclick="toggleCheckbox(this)"> Pyfuscator
         </label>
     </div>
     <div class="container">
