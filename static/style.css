@@ -1,0 +1,190 @@
+body, button, .title, .subtitle, .checkbox-container label, footer {
+    font-family: 'Chelsea Market';
+
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.header {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+.header .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 13px;
+}
+.header .subtitle {
+    font-size: 14px;
+    color: #aaa;
+    margin-left: 13px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.editor-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70vh;
+}
+.editor {
+    width: 45vw;
+    height: 100%;
+    margin: 10px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+button {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+button.deobf {
+    background-color: #165825;
+    color: #fff;
+}
+button.deobf:hover {
+    background-color: #0c3014;
+}
+button.copy {
+    background-color: #0d3a5f;
+    color: #fff;
+}
+button.copy:hover {
+    background-color: #0a1e42;
+}
+button span {
+    margin-left: 5px;
+}
+.copy-message {
+    display: none;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.checkbox-container {
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+}
+.checkbox-container label {
+    cursor: pointer;
+}
+footer {
+    /* display: flex; */
+    justify-content: space-between;
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 8px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    font-size: 15px;
+    text-align: right;
+}
+
+/* .footer-left {
+    text-align: left;
+    margin-left: 20px;
+} */
+
+.footer-right {
+    text-align: right;
+    margin-right: 20px;
+}
+
+footer a {
+    color: #165825;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+ul.ks-cboxtags {
+    list-style: none;
+}
+ul.ks-cboxtags li{
+  display: inline;
+}
+ul.ks-cboxtags li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid #0d3a5f;
+    background-color: #165825;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+  border: 2px solid #0d3a5f;
+}
+
+.ks-cboxtags .divider {
+    align-items: center;
+    margin: 0 5px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    font-weight: 300;
+}
