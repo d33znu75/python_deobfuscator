@@ -4,7 +4,7 @@ body, button, .title, .subtitle, .checkbox-container label, footer {
 }
 
 body {
-    background-color: #121212;
+    background-color: #191919;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
     display: flex;
@@ -16,7 +16,7 @@ body {
 }
 .header {
     width: 100%;
-    background-color: #1e1e1e;
+    background-color: #272727;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -57,9 +57,9 @@ body {
     width: 45vw;
     height: 100%;
     margin: 10px;
-    background-color: #1e1e1e;
+    background-color: #181818;
     color: #e0e0e0;
-    border: 1px solid #333;
+    border: 1px solid #202020;
     border-radius: 8px;
 }
 button {
@@ -77,6 +77,13 @@ button.deobf {
 }
 button.deobf:hover {
     background-color: #0c3014;
+}
+button.clear {
+    background-color: #581616;
+    color: #fff;
+}
+button.clear:hover {
+    background-color: #300c0c;
 }
 button.copy {
     background-color: #0d3a5f;
@@ -108,7 +115,7 @@ footer {
     /* display: flex; */
     justify-content: space-between;
     width: 100%;
-    background-color: #1e1e1e;
+    background-color: #272727;
     padding: 8px;
     text-align: center;
     position: fixed;
@@ -128,7 +135,7 @@ footer {
 }
 
 footer a {
-    color: #165825;
+    color: #1c6e2f;
     text-decoration: none;
 }
 footer a:hover {
@@ -143,7 +150,7 @@ ul.ks-cboxtags li{
 }
 ul.ks-cboxtags li label{
     display: inline-block;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(17, 17, 17, 0.9);
     border: 2px solid rgba(139, 139, 139, .3);
     color: #adadad;
     border-radius: 25px;

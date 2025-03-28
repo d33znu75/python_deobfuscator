@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template # type: ignore
-from modules import decode_lambda_hex, decode_lambda_base64, decode_pipobfuscator, decode_malwarekid
+from modules import decode_lambda_hex, decode_lambda_base64, decode_pipobfuscator, decode_malwarekid, decode_marshal, decode_pyobfusinator
 import re
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ def index():
 
 def auto_detect(data):
     if not data:
-        return "No input data."
+        return "# No input data."
     match = re.search(r"fromhex\('([0-9a-fA-F]+)'\.replace", data)
     if match:
         return decode_lambda_hex(data)
@@ -26,8 +26,16 @@ def auto_detect(data):
     match = re.search(r"_=exec;_\(\'\\x", data)
     if match:
         return decode_pipobfuscator(data)
+    match = re.search(r"marshal", data)
+    if match:
+        return decode_marshal(data)
+    match = re.search(r"\.encode\(\);exec\(''.join\(chr\(", data)
+    if match:
+        return decode_pyobfusinator(data)
+    if 'str(eval)' and '[]' and 'str' and 'eval' and '+all' in data:
+        return decode_pyobfusinator(data)
     
-    return "Obfuscation method not supported."
+    return "# Obfuscation method not supported."
 
 @app.route('/deobf', methods=['POST'])
 def deobf():
@@ -44,9 +52,12 @@ def deobf():
         result = decode_malwarekid(input_text)
     elif option == 'option4':
         result = decode_pipobfuscator(input_text)
+    elif option == 'option5':
+        result = decode_marshal(input_text)
+    elif option == 'option6':
+        result = decode_pyobfusinator(input_text)
     else:
-        result = "No valid option selected."
-
+        result = "# No valid option selected."
     return result
 
 if __name__ == '__main__':

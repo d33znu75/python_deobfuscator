@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="header">
@@ -42,6 +43,14 @@
                 <input type="checkbox" id="checkboxPyObfuscator" name="option" value="option4" onclick="toggleCheckbox(this)">
                 <label for="checkboxPyObfuscator">PyObfuscator</label>
             </li>
+            <li>
+                <input type="checkbox" id="checkboxPyFuscater" name="option" value="option5" onclick="toggleCheckbox(this)">
+                <label for="checkboxPyFuscater">Py-Fuscate</label>
+            </li>
+            <li>
+                <input type="checkbox" id="checkboxPyObfusinator" name="option" value="option6" onclick="toggleCheckbox(this)">
+                <label for="checkboxPyObfusinator">PyObfusinator</label>
+            </li>
             <!-- <li>
                 <input type="checkbox" id="checkboxLambdaHex" name="option" value="option1" onclick="toggleCheckbox(this)">
                 <label for="checkboxLambdaHex">Lambda Hex <span style="font-size: 12px; color: #b42121;">Work in Progress</span></label>
@@ -50,8 +59,18 @@
     </div>
     <div class="container">
         <div class="button-container">
-            <button class="deobf" onclick="deobfuscate()">&#9654;<span> Deobfuscate</span></button>
-            <button class="copy" onclick="copyToClipboard()">&#128203; <span>Copy</span></button>
+            <button class="clear" onclick="clearEditors()">
+                <span>Clear&nbsp;</span>
+                <i class="fa-solid fa-trash"></i>
+            </button>
+            <button class="deobf" onclick="deobfuscate()">
+                <span> Deobfuscate&nbsp;</span>
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <button class="copy" onclick="copyToClipboard()">
+                <span>Copy&nbsp;</span>
+                <i class="fa-solid fa-copy"></i>
+            </button>
         </div>
         <div class="copy-message" id="copyMessage">Output has been copied to clipboard</div>
         <div class="editor-container">
@@ -120,6 +139,10 @@
                     copyMessage.style.display = 'none';
                 }, 3000);
             });
+        }
+        function clearEditors() {
+            window.inputEditor.setValue('');
+            window.outputEditor.setValue('');
         }
     </script>
 </body>
